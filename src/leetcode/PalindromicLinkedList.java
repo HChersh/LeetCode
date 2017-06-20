@@ -1,8 +1,8 @@
 package leetcode;
 
-public class PalindromicLinkedList { // 鍒ゆ柇閾捐〃鏄惁涓轰竴涓洖鏂囧簭鍒�	
+public class PalindromicLinkedList { // 判断链表是否为一个回文序列
 	/*
-	 * 鐢ㄦ爤缁撴瀯瀹炵幇姣旇緝鐨勭畝鍗曪紝杩欓噷鎴戜滑闇�鏃堕棿澶嶆潅搴﹁揪鍒癘(N),棰濆搴︾┖闂村鏉傚害杈惧埌O(1)
+	 * 用栈结构实现比较的简单，这里我们需要时间复杂度达到O(N),额外度空间复杂度达到O(1)
 	 */
 	public static boolean isPalindromel(Node head) {
 		if (head == null || head.next == null) {
@@ -12,14 +12,14 @@ public class PalindromicLinkedList { // 鍒ゆ柇閾捐〃鏄惁涓轰竴涓�
 		Node right;
 		Node temp = head;
 //        int length = 0;
-//        while(temp != null){      //閫氳繃渚垮埄閾捐〃寰楀埌闀垮害鏉ユ壘鍒颁腑闂磋妭鐐圭湡鏄瀮鍦撅紒锛侊紒
+//        while(temp != null){      //通过便利链表得到长度来找到中间节点真是垃圾！！！
 //        	temp = temp.next;
 //        	length++;
 //        }
         Node n1 = head;  Node n2 = head;
-        while(n2.next != null &&n2.next.next !=null ){   //鏌ユ壘涓棿鑺傜偣
-           n1 = n1.next;        //涓棿鑺傜偣
-           n2 = n2.next.next;   //灏鹃儴鑺傜偣
+        while(n2.next != null &&n2.next.next !=null ){   //查找中间节点
+           n1 = n1.next;        //中间节点
+           n2 = n2.next.next;   //尾部节点
         }
         
         
