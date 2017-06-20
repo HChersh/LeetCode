@@ -33,7 +33,7 @@ public class JosephRing {
 		if (null == head || head == head.next || 1 == m) {
 			return head;
 		}
-		int i = 1;       //至少都有两个节点
+		int i = 1;       //至少都有两个节点if
 		Node temp = head;
 		for(;temp.next.next != temp;temp = temp.next)   //计算环的大小
 			i += 1;;
