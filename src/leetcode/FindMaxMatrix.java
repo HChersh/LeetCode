@@ -26,7 +26,7 @@ public class FindMaxMatrix {
 			return 0;
 		}
 		for(int i = 0 ; i < map.length ; i++){   //用每一列作底去计算矩阵最小的面积
-			for(int j = 0 ;i < map[0].length ; j++){
+			for(int j = 0 ;j < map[0].length ; j++){
 				hight[j] = map[i][j] == 0 ? 0 :hight[j]+1;
 				maxSize = Math.max(maxSize, maxRecFromBottom(hight));
 			}
