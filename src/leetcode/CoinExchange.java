@@ -7,7 +7,19 @@ public class CoinExchange {
 		int[] penny = {1,2,4};
 		int aim = 3;
         System.out.println(charge(penny,0,aim));
+        System.out.println(charge_2(penny,aim));
 	}
+	
+	 public static int charge_2(int[] penny,int aim){  //动态规划非递归方式
+		 int[] res = new int[aim];
+		 res[0] = 1;
+		 for(int i = 0 ; i < penny.length ; i++){
+			 for(int j = penny[i] ; j < aim ; j++){
+				 res[j] += res[j-penny[i]];
+			 }
+		 }
+		 return res[aim-1];
+	 }
 	 public static int charge(int[] penny, int index, int aim){  //递归的方式
 	       int res = 0;
 	       if(penny == null || aim < 0 ){
