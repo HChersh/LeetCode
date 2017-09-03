@@ -11,14 +11,14 @@ public class CoinExchange {
 	}
 	
 	 public static int charge_2(int[] penny,int aim){  //动态规划非递归方式
-		 int[] res = new int[aim];
+		 int[] res = new int[aim+1];
 		 res[0] = 1;
 		 for(int i = 0 ; i < penny.length ; i++){
-			 for(int j = penny[i] ; j < aim ; j++){
+			 for(int j = penny[i] ; j <= aim ; j++){
 				 res[j] += res[j-penny[i]];
 			 }
 		 }
-		 return res[aim-1];
+		 return res[aim];
 	 }
 	 public static int charge(int[] penny, int index, int aim){  //递归的方式
 	       int res = 0;
